@@ -1,6 +1,6 @@
-import { Browser, Page } from "puppeteer";
+import { Browser, Page } from 'puppeteer';
 
-import { mainURL } from "./config";
+import { mainURL } from './config';
 
 export const searchForJerseys = async (page: Page) => {
   await page.waitForNetworkIdle();
@@ -31,4 +31,4 @@ export const scrollPage = async (page: Page) => {
     repeatCount: 2,
     repeatDelayMs: 250,
   });
-}
+};

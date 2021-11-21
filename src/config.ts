@@ -10,8 +10,18 @@ export const settings = {
       title: 'Dev Excellence',
       description: 'Priorities to improve.',
       auditRefs: [
-        { id: 'largest-contentful-paint', weight: 20, group: 'metrics', acronym: 'LCP' },
-        { id: 'total-blocking-time', weight: 25, group: 'metrics', acronym: 'TBT' },
+        {
+          id: 'largest-contentful-paint',
+          weight: 20,
+          group: 'metrics',
+          acronym: 'LCP',
+        },
+        {
+          id: 'total-blocking-time',
+          weight: 25,
+          group: 'metrics',
+          acronym: 'TBT',
+        },
         { id: 'total-byte-weight', weight: 25 },
         { id: 'dom-size', weight: 20 },
         { id: 'errors-in-console', weight: 5 },
