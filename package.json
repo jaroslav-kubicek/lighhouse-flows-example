@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "lighthouse": "^9.5.0",
+    "lighthouse": "^9.6.1",
     "puppeteer": "^14.2.1"
   },
   "devDependencies": {
