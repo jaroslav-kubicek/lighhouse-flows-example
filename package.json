@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "lighthouse": "^9.6.5",
-    "puppeteer": "^19.5.2"
+    "puppeteer": "^19.6.1"
   },
   "devDependencies": {
     "husky": "^8.0.3",
