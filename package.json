@@ -5,6 +5,7 @@
   "author": "Jaroslav Kubicek <jaroslav.kubicek@gmail.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "dependencies": {
     "lighthouse": "^10.0.1",
     "puppeteer": "^19.6.3"

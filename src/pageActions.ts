@@ -1,6 +1,6 @@
 import { Browser, Page } from 'puppeteer';
 
-import { mainURL } from './config';
+import { mainURL } from './config.js';
 
 export const searchForJerseys = async (page: Page) => {
   await page.waitForNetworkIdle();
