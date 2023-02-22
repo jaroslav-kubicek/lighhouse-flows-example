@@ -1,13 +1,12 @@
 import fs from 'fs';
 import puppeteer from 'puppeteer';
-// @ts-ignore
-import { startFlow } from 'lighthouse/lighthouse-core/fraggle-rock/api';
+import { startFlow } from 'lighthouse';
 
-import { preheatBrowser, scrollPage, searchForJerseys } from './pageActions';
-import { settings, mainURL, categoryURL } from './config';
+import { preheatBrowser, scrollPage, searchForJerseys } from './pageActions.js';
+import { settings, mainURL, categoryURL } from './config.js';
 
 const generateReport = async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: false });
   await preheatBrowser(browser);
 
   const page = await browser.newPage();
@@ -16,21 +15,19 @@ const generateReport = async () => {
     config: settings,
   });
 
-  await flow.navigate(mainURL, { stepName: 'Load homepage' });
+  await flow.navigate(mainURL);
   await searchForJerseys(page);
-  await flow.snapshot({ stepName: 'Search for jerseys' });
+  await flow.snapshot();
 
-  await flow.navigate(categoryURL, {
-    stepName: 'Load "jerseys" product category',
-  });
-  await flow.startTimespan({ stepName: 'scroll in list' });
+  await flow.navigate(categoryURL);
+  await flow.startTimespan();
   await page.goto(categoryURL, { waitUntil: 'networkidle0' });
   await scrollPage(page);
   await flow.endTimespan();
 
   await browser.close();
 
-  const report = flow.generateReport();
+  const report = await flow.generateReport();
   fs.writeFileSync('reports/wiggle.html', report);
 };
 
