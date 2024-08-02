@@ -8,7 +8,7 @@
   "type": "module",
   "dependencies": {
     "lighthouse": "^11.7.1",
-    "puppeteer": "^22.14.0"
+    "puppeteer": "^22.15.0"
   },
   "devDependencies": {
     "husky": "^9.1.2",
