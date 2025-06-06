@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "lighthouse": "^12.6.0",
+    "lighthouse": "^12.6.1",
     "puppeteer": "^24.9.0"
   },
   "devDependencies": {
